@@ -1,0 +1,172 @@
+.Battle {
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background-image: url(../images/maps/DemoBattle2.png);
+    width: 352px;
+    height: 198px;
+    background-size: cover;
+    image-rendering: pixelated;
+    
+  }
+
+
+
+
+
+  /* Animations */
+
+@keyframes battle-damage-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.battle-damage-blink {
+  animation: battle-damage-blink 0.3s steps(2, start) infinite;
+}
+
+/* normal atack */
+
+@keyframes battle-atack-right {
+  0%{ transform: translate3d(0,0,0) rotate(0deg);}
+  25%{ transform: translate3d(120px,0,0) rotate(-45deg);}
+  100%{ transform: translate3d(0,0,0) rotate(0deg);}
+}
+
+.battle-atack-right {
+  animation: battle-atack-right 0.8s;
+}
+
+
+@keyframes battle-atack-left {
+  0%{ transform: translate3d(0,0,0) rotate(0deg);}
+  25%{ transform: translate3d(-120px,0,0) rotate(45deg);}
+  100%{ transform: translate3d(0,0,0) rotate(0deg);}
+}
+
+.battle-atack-left {
+  animation: battle-atack-left 0.8s;
+}
+
+
+/* fire animation */
+.fire_container {
+  image-rendering: pixelated;
+  position: absolute;
+}
+.fire_frame {
+  width: 24px;
+  height: 32px;
+  object-fit: cover;
+  object-position: 0px 0px;
+  display: none;
+}
+
+
+
+/* projectile */
+.projectile {
+  position:absolute;
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes battle-projectile-right {
+  0%{ transform: translate3d(0,0,0) scale(0.5); opacity: 1; }
+  /* 25%{ transform: translate3d(40px,0px,0) scale(0.75); opacity: 1; } */
+  95%{ transform: translate3d(120px,0px,0) scale(1); opacity: 1; }
+  100%{ transform: translate3d(120px,0px,0) scale(1); opacity: 0;}
+}
+
+.battle-projectile-right {
+  animation: battle-projectile-right 1s forwards;
+}
+
+
+
+@keyframes battle-projectile-left {
+  0%{ transform: translate3d(0,0,0) scale(0.5); opacity: 1; }
+  /* 25%{ transform: translate3d(-40px,30px,0) scale(0.75); opacity: 1; } */
+  95%{ transform: translate3d(-120px,0,0) scale(1); opacity: 1; }
+  100%{ transform: translate3d(-120px,0,0) scale(1); opacity: 0;}
+}
+
+.battle-projectile-left {
+  animation: battle-projectile-left 1s forwards;
+}
+
+
+/* turn indicator element */
+.Battle_turn_hud {
+  /* width: 100px; */
+  height: 21px;
+  border: 1px solid var(--menu-border-color);
+  background-color: var(--menu-background);
+
+  font-size: 10px;
+
+  position: absolute;
+  left: 50%;
+  top: 3px;
+  transform: translateX(-50%);
+
+  padding: 0px 4px;
+
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.Battle_turn_hud div{
+  width: 15px;
+  height: 15px;
+  margin: 2px;
+  
+}
+
+.turn_hud_player{
+  border: 1px solid green;
+}
+
+.turn_hud_enemy{
+  border: 1px solid red;
+}
+
+
+
+
+.Battle_pos_right_1 {
+  bottom: 90px;
+  left: 130px;
+}
+.Battle_pos_right_2 {
+  bottom: 122px;
+  left: 145px;
+}
+.Battle_pos_right_3 {
+  bottom: 58px;
+  left: 145px;
+}
+
+.Battle_pos_left_1 {
+  bottom: 90px;
+  right: 130px;
+}
+.Battle_pos_left_2 {
+  bottom: 122px;
+  right: 140px;
+}
+.Battle_pos_left_3 {
+  bottom: 58px;
+  right: 140px;
+}
+
+.tmp{
+  position: absolute;
+  width:2px;
+  height: 2px;
+  border: 1px solid black;
+  /* transform: translate(-50%, 50%); */
+}
